@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="extensions/filter-control/bootstrap-table-filter-control.css">
+    <script src="extensions/filter-control/bootstrap-table-filter-control.js"></script>
+</head>
+<body>
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand active" th:href="'/'+${home_url}">TAA</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Consulter les données
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="'/'+${location_url}">Lieux</a></li>
+                        <li><a th:href="'/'+${appointment_url}">Rendez-vous</a></li>
+                        <li><a th:href="'/'+${client_url}">Clients</a></li>
+                        <li><a th:href="'/'+${entreprise_url}">Entreprises</a></li>
+                        <li><a th:href="'/'+${prestataire_url}">Prestataires</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ajouter des données
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="'/'+${add_location_url}">Ajouter un lieux</a></li>
+                        <li><a th:href="'/'+${add_appointment_url}">Ajouter un rendez-vous</a></li>
+                        <li><a th:href="'/'+${add_client_url}">Ajouter un client</a></li>
+                        <li><a th:href="'/'+${add_entreprise_url}">Ajouter une entreprise</a></li>
+                        <li><a th:href="'/'+${add_prestataire_url}">Ajouter un prestataire</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</body>
+</html>

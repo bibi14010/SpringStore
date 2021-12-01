@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Entreprises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand active" th:href="'/'+${home_url}">TAA</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Consulter les données
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="'/'+${location_url}">Lieux</a></li>
+                    <li><a th:href="'/'+${appointment_url}">Rendez-vous</a></li>
+                    <li><a th:href="'/'+${client_url}">Clients</a></li>
+                    <li><a th:href="'/'+${entreprise_url}">Entreprises</a></li>
+                    <li><a th:href="'/'+${prestataire_url}">Prestataires</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ajouter des données
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a th:href="'/'+${add_location_url}">Ajouter un lieux</a></li>
+                    <li><a th:href="'/'+${add_appointment_url}">Ajouter un rendez-vous</a></li>
+                    <li><a th:href="'/'+${add_client_url}">Ajouter un client</a></li>
+                    <li><a th:href="'/'+${add_entreprise_url}">Ajouter une entreprise</a></li>
+                    <li><a th:href="'/'+${add_prestataire_url}">Ajouter un prestataire</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<table class="table table-dark">
+    <thead class="thead-dark">
+    <tr>
+        <th  scope="col">#</th>
+        <th  scope="col">Nom</th>
+        <th  scope="col">Adresse</th>
+        <th  scope="col">Secteur</th>
+    </tr>
+    </thead>
+    <tbody id="entreprises_table">
+    <tr data-th-each="entreprise : ${entreprises_object}">
+        <th scope="row" data-th-text="${entreprise.id}"></th>
+        <td data-th-text="${entreprise.name}"></td>
+        <td data-th-text="${entreprise.location}"></td>
+        <td data-th-text="${entreprise.sector}"></td>
+    </tr>
+    </tbody>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">
+            <nav class="navbar navbar-light bg-light ">
+                <form class="form-inline">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#entreprises_table tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
+</table>
+
+
+</body>
+</html>
