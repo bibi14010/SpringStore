@@ -2,7 +2,7 @@
 
 Travail pratique pour UE de TAA à l'ISTIC
 
-Ce tp a les mêmes fonctions que le deuxième tp de TAA, mais cette fois ci avec un backend Spring Boot.
+Ce tp a les mêmes fonctions que <a href="https://github.com/bibi14010/tp2jpa">le deuxième tp de TAA</a> , mais cette fois ci avec un backend Spring Boot.
 La conception initiale (tp1), qui n'est pas terrible à vrai dire - mais ce n'est pas le but de ces travaux- a été vu de la sorte :
 <br> Pour faire prendre un rendz-vous, il nous faut 2 entités, une qui prend le rendez-vous, l'autre qui l'accepte. De  cette base,
 j'ai imaginé un modèle saler/customer et ai fondé tout le reste dessus.
@@ -40,8 +40,11 @@ Les fonctionnalités sont similaires au TP précédent et sont donc très rédui
 - Créer un client
 - Faire prendre un rendez-vous entre un prestataire et un client.
 
+Cette fois, des jeux de tests sont insérés au démarage de l'appli, de cette façon on ne part pas de rien.
+
 ## WIP - Ce qu'il reste à faire
 
+- Restreindre lieu du rendez-vous au lieu de l'entreprise du prestataire
 - Connexion des utilisateurs & sécurité
 - Gestion des rôles des utilisateurs
 - Soigner un peu plus l'apparence web
