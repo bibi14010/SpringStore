@@ -1,0 +1,41 @@
+user:
+  firstname: Martin
+  lastname: Thomas
+  school: Istic
+server:
+  port: 8080
+spring:
+  config.activate.on-profile: dev
+  mvc.view:
+    suffix : .html
+  datasource:
+    initialize: true
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/taa_spring
+    username: root
+    password :
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+my-app.routes:
+  accueil: home
+  # @Get only URLs
+  locationsList: locations
+  clientsList: clients
+  entreprisesList: entreprises
+  appointmentsList: appointments
+  prestatairesList: prestataires
+  # @Get and @Post URLs
+  locationsAjout: addLocation
+  clientsAjout: addClient
+  entreprisesAjout: addEntreprise
+  appointmentsAjout: addAppointment
+  prestatairesAjout: addPrestataire
+
